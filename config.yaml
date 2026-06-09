@@ -1,0 +1,71 @@
+# ──────────────────────────────────────────────
+# TonyPi 实训项目 API 配置文件
+# 使用前请填写你的密钥
+# ──────────────────────────────────────────────
+
+# 科大讯飞语音听写 API
+# https://www.xfyun.cn/service/voicedictation
+xunfei:
+  appid: "5f750c99"
+  api_secret: "NzBmZjNmZmY4YjFkMWM3NTU5NzMwZDJj"
+  api_key: "2a0f2ee33f09efbe904aa7689a8c9d4e"
+
+# DeepSeek 大语言模型 API
+# https://platform.deepseek.com/
+deepseek:
+  api_key: "sk-619cde7eb0b04dc896c3b2014e03da71"
+  base_url: "https://api.deepseek.com"
+  model: "deepseek-chat"
+
+# ── 语音模块配置 ──
+stt:
+  # 默认模式: hardware（离线ASR芯片）或 xunfei（讯飞API）
+  default_mode: "xunfei"
+  # 录音时长（秒，仅 xunfei 模式生效）
+  record_seconds: 10
+  # ALSA 录音设备（arecord -D）
+  alsa_device: "plughw:3,0"
+
+# ── 大模型配置 ──
+llm:
+  # 默认使用 deepseek
+  provider: "deepseek"
+  # 系统提示词语言
+  language: "zh"
+
+# 智谱 AI（用于场景描述）
+zhipu:
+  api_key: "cdec2f72db6c496cbbf48627b657f9a7.JW9lblxT4ScLsS7l"
+
+# ── 科大讯飞在线 TTS（语音合成，与上方 STT 是不同账号）──
+# https://www.xfyun.cn/service/tts
+tts_xunfei:
+  appid: "9c724cae"
+  api_secret: "OGM0YmU0MDk1MWMzYzViODhjM2YyOWQx"
+  api_key: "e3b51df80911bfed156cccc85bf87609"
+
+# TTS 语音合成（播报参数）
+tts:
+  # 默认模式: hardware（I2C芯片驱动板载扬声器）或 xunfei（云端，需外接音箱）
+  default_mode: "hardware"
+  # default_mode: "xunfei"
+  # 默认发音人（讯飞 TTS 参数）
+  default_voice: "x4_yezi"
+  # 语速 0-100（默认 50）
+  default_speed: 50
+  # 音量 0-100（默认 100）
+  default_volume: 100
+  # 是否保留音频文件（false 表示播完即删）
+  save_audio: false
+
+  # 硬件模式 ALSA 设备名（用于 aplay -D）
+  alsa_device: "plughw:2,0"
+  # aplay 超时秒数（0 表示不限时，播完为止）
+  aplay_timeout: 0
+
+
+  # ── 硬件 I2C TTS 降级参数 ──
+  # 每次朗读的最大字数（超过会自动拆分）
+  max_chars: 6
+  # 每字等待时间（秒）
+  char_speed: 0.3

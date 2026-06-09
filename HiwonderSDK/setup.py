@@ -1,0 +1,20 @@
+from distutils.core import setup
+
+setup(name="hiwonder",
+      version="1.0",
+      description="common functions",
+      author="aiden",
+      py_modules=['hiwonder.Misc',
+                  'hiwonder.PID',
+                  'hiwonder.TTS',
+                  'hiwonder.ASR',
+                  'hiwonder.Board',
+                  'hiwonder.Mpu6050',
+                  'hiwonder.Sonar',
+                  'hiwonder.ActionGroupControl',
+                  'hiwonder.PWMServo',
+                  'hiwonder.BusServoCmd',
+                  'hiwonder.yaml_handle',
+                  'hiwonder.Camera',
+                  'hiwonder.apriltag',
+                  'hiwonder.ImgAddText'])
