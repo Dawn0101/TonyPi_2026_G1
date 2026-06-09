@@ -5,6 +5,7 @@
 ![TonyPi](https://img.shields.io/badge/机器人-TonyPi-blue)
 ![Python](https://img.shields.io/badge/python-3.7%2B-green)
 ![License](https://img.shields.io/badge/license-MIT-orange)
+[![Bilibili](https://img.shields.io/badge/演示视频-Bilibili-00A1D6)](https://www.bilibili.com/video/BV1T9E56MEr4/?spm_id_from=333.1387.homepage.video_card.click&vd_source=c648a935d457649dcc7a41f55a4654b3)
 
 **9 大演示场景 · 逐层递进 · 从关键词控制到多模态 AI 智能体**
 
